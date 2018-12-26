@@ -11,7 +11,7 @@ return new MaterialApp(
 
 home: new LoginPage(),
  theme : new ThemeData(
-   primarySwatch: Colors.green
+   primarySwatch: Colors.blue
  )
 
 
