@@ -1,66 +1,29 @@
 import 'package:flutter/material.dart';
+import 'login_page.dart';
+import 'home_page.dart';
 
 void main()=> runApp(new MyApp()); 
 
 class MyApp extends StatelessWidget{
+  final routes = <String, WidgetBuilder>{
+    LoginPage.tag: (context)=> LoginPage(),
+    HomePage.tag: (context)=> HomePage(),
+
+  };
 
 
 @override
 Widget build(BuildContext context){
-return new MaterialApp(
+return MaterialApp(
+  title: 'Login',
+  debugShowCheckedModeBanner: false,
+  theme: ThemeData(
 
-home: new LoginPage(),
- theme : new ThemeData(
-   primarySwatch: Colors.blue
- )
-
-
+    primarySwatch: Colors.lightBlue,
+    fontFamily: 'Nunito',
+  ),
+  home: LoginPage(),
+  routes: routes,
 );
-
-
 }
-
-
-
-}
-
-class LoginPage extends StatefulWidget{
-
-@override
-State createState() => new LoginPageState();
-
-}
-
-class LoginPageState extends State<LoginPage>{
-
-
-@override
-Widget build(BuildContext context){
-  return new Scaffold(
-    backgroundColor: Colors.lightBlueAccent,
-    body: new Stack(
-      children: <Widget>[
-
-        new Image(
-
-          image: AssetImage('assets/a.jpg'),
-          
-        
-        )
-
-
-      ],
-
-
-    ),
-
-
-
-  );
-
-
-
-
-} 
-
 }
